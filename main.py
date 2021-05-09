@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 @app.route('/upload')
 def upload_file():
-   return render_template('upload.html')
+   return render_template('hackathon.html')
 
 
 @app.route('/uploader', methods = ['GET', 'POST'])
@@ -44,7 +44,7 @@ def uploader_file():
       
       f = request.files['file']
       #f.save(secure_filename(f.filename))
-      return render_template("ch.html", user_image = f.filename)
+      return render_template("hackathon.html", user_image = f.filename)
 		
 if __name__ == '__main__':
     
