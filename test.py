@@ -5,9 +5,7 @@ from utils import *
 """main"""
 def main():
     # parse arguments
-    args = parse_args()
-    if args is None:
-      exit()
+    
 
     # open session
     gan = UGATIT()
