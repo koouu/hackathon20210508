@@ -44,20 +44,18 @@ class UGATIT(object) :
         
 
     
-    def load(self, dir, step):
-        params = torch.load(os.path.join(dir, self.dataset + '_params_%07d.pt' % step))
+    def load(self):
+        params = torch.load(os.path.join('model','model.pt'))
         self.genA2B.load_state_dict(params['genA2B'])
         
 
     def test(self):
-        model_list = glob(os.path.join(self.result_dir, self.dataset, 'model', '*.pt'))
+        model_list = glob(os.path.join('model', 'model.pt'))
         
         print(torch.__version__)
         
         if not len(model_list) == 0:
-            model_list.sort()
-            iter = int(model_list[-1].split('_')[-1].split('.')[0])
-            self.load(os.path.join(self.result_dir, self.dataset, 'model'), iter)
+            self.load()
             print(" [*] Load SUCCESS")
         else:
             print(" [*] Load FAILURE")
@@ -101,7 +99,7 @@ class UGATIT(object) :
                                   RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))), 0)
 
             
-            cv2.imwrite(os.path.join('images', 'A2B_%d.png' % (n + 1)), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
+            cv2.imwrite(os.path.join('static','images', 'changed.png'), RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))) * 255.0)
             
         
         
