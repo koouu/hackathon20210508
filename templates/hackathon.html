@@ -65,6 +65,7 @@ font-weight: 600;
     width: 250px;
     height: 175px;
   }
+
   .ya-imgs{
     padding: :0
     width:200px;
@@ -76,9 +77,10 @@ font-weight: 600;
 </head>
 
 <body>
+
   <div class="bg-imgs">
   <div class="container">
-  <h1>フェイク北斎（仮）</h1><br>
+  <h1>フェイク北斎</h1><br>
 
   <inline>
     <img class="mt-imgs" src="mt.png">
@@ -92,7 +94,11 @@ font-weight: 600;
 
 
   <p>↓変換したいファイルを選択してね</p>
-  <input type="file" id="selfile"><br>
+  <form action = "http://localhost:5000/uploader" method = "POST"
+     enctype = "multipart/form-data">
+     <input type = "file" name = "file" id="selfile" />
+     <input type = "submit"/>
+  </form>
 
   <div id="bg"></div>
 
@@ -244,19 +250,15 @@ font-weight: 600;
 
   },false);
 
-  var myfunc=function(){
-    var str = url;
-    document.getElementById("url").value = url;
+
+  </script>
+  <!-- Content here -->
+  <script>
+  ver henkanv = function(){
+    document.getElementById("bg").innerHTML = "<img src="" width=250>";
   }
   </script>
-
-  <form action ="http://192.168.100.136:8080/Desktop/%E3%83%9A%E3%83%BC%E3%82%B8/" method = "POST">
-     <input type="text" id="selfile"  name="URL"/>
-     <input type="submit"  value="だ"/>
-  </form>
-  <!-- Content here -->
-
-  <input type="button" class="mt-2 btn btn-primary" value="変換" onclick=""/>
+  <input type="button" class="mt-2 btn btn-primary" value="変換" onclick="henkanv()"/>
   </div>
   </div>
 </div>
