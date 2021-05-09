@@ -10,7 +10,7 @@
 
 使い方
 
-`$hoge = 1`python main.py
+`$python main.py'
 
 立ち上がったローカルサーバーにアクセス  
 画像をアップロードし変換
