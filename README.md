@@ -9,6 +9,10 @@
 * cuda 10.2
 
 使い方
+
+以下のURLから変換モデルをダウンロードしてください
+
+
 ```
 python main.py
 ```
@@ -17,7 +21,14 @@ python main.py
 画像をアップロードし変換
 
 
-変換だけしたい 
+変換だけしたい場合
+```
+python test.py  --dataset [YOUR_IMAGE_DATASET_DIR] --result [YOUR_RESULT_DIR]
+```
+
+
+
+
 
 
 
