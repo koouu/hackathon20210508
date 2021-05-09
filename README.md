@@ -11,7 +11,9 @@
 使い方
 
 以下のURLから変換モデルをダウンロードしてください
+https://drive.google.com/file/d/1CKZD36aol6KZsfWibiY3aI9-1MWJCU24/view?usp=sharing
 
+model.ptをmodelフォルダの中に入れてください。
 
 ```
 python main.py
@@ -22,8 +24,11 @@ python main.py
 
 
 変換だけしたい場合
+
+dataset/picture2art/testAの中にある画像をすべて変換します
+
 ```
-python test.py  --dataset [YOUR_IMAGE_DATASET_DIR] --result [YOUR_RESULT_DIR]
+python test.py  
 ```
 
 
